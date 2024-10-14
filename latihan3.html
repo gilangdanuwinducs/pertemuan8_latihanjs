@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="tampilkanData()">Tampilkan Data</button>
+    <div id="containerSinglePerson"></div>
+
+    <button type="button" onclick="tampilkanData2()">Tampilkan Data 2</button>
+    <div id="containerSinglePerson2"></div>
+<script>
+    var dataMahasiswa = ['Gilang Danuwindu J', 25 , 'Bandung'];
+
+    function tampilkanData() {
+        var ulElm = document.createElement("ul");
+
+        // membuat Element baru
+        var liElm1 = document.createElement("li");
+        liElm1.innerHTML = "NAMA: " + dataMahasiswa[0];
+        
+        var liElm2 = document.createElement("li");
+        liElm2.innerHTML = "UMUR: " + dataMahasiswa[1];
+        
+        var liElm3 = document.createElement("li");
+        liElm3.innerHTML = "KOTA: " + dataMahasiswa[2];
+
+        // Menampilkan Elemen
+        ulElm.appendChild(liElm1);
+        ulElm.appendChild(liElm2);
+        ulElm.appendChild(liElm3);
+
+        // Menambahkan data UL ke container yang terdapat di div
+        var containerElm = document.getElementById('containerSinglePerson');
+        containerElm.appendChild(ulElm);
+    }
+
+    var dataMahasiswasakelas = [
+        ['Gilang Danuwindu J', 25 , 'Bandung'],
+        ['Dewi Rahmawati', 23 , 'Jakarta'],
+        ['Budi Santoso', 27 , 'Surabaya'],
+        ['Siti Nurhaliza', 24 , 'Yogyakarta'],
+        ['Andi Wijaya', 26 , 'Medan']
+    ];
+
+    function tampilkanData2() {
+        var data = dataMahasiswasakelas.map(row => `
+        <ul>
+            <li>NAMA: ${row[0]}</li>
+            <li>UMUR: ${row[1]}</li>
+            <li>KOTA: ${row[2]}</li>
+        </ul>
+        `).join('');
+
+        var containerElm = document.getElementById('containerSinglePerson2');
+        containerElm.innerHTML = data; 
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="javascript:void(0)" onclick="openAlert()">Click</a>
+    <br>
+    <input type="number" id="txtIsiangka" placeholder="Masukan nomor Togel"/>
+    <br>
+    <input type="number" id="txtPengkalian" placeholder="Pingin * berapa"/>
+    <br>
+    <button type="button" onclick="kali2()">Pengkalian</button>
+    <h3 id="hasil"></h3>
+
+    <script>
+        function openAlert(){
+            alert('jangan woi');
+        }
+        
+
+        function kali2(){
+            var komponenText = document.getElementById('txtIsiangka').value;
+            var pengkalian = document.getElementById('txtPengkalian').value;
+
+            var hasilKali = komponenText * pengkalian;
+            document.getElementById('hasil').innerHTML = "Hasilnya adalah :" + hasilKali; 
+        }
+    </script>
+</body>
+</html>
